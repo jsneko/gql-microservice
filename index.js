@@ -120,8 +120,8 @@ module.exports = function microservice (typeDefs, resolvers, datasources, schema
     /**
      * Starts the server
      * 
-     * @param {number} [port=4000]
-     *  The port to listen on
+     * @param {number} [port]
+     *  The port to listen on. If this is not provided a random port will be chosen.
      * @returns {Promise.<object>}
      */
     async start(port) {
