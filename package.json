@@ -1,0 +1,13 @@
+{
+  "name": "graphql-microservice",
+  "version": "1.0.0",
+  "description": "Consolidates the boilerplate for running an Apollo GraphQL server",
+  "main": "index.js",
+  "author": "william.weithers@gmail.com (Bill Weithers)",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/federation": "0.16.2",
+    "@sindresorhus/is": "2.1.1",
+    "apollo-server": "2.14.1"
+  }
+}
