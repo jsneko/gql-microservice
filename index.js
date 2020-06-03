@@ -81,7 +81,7 @@ module.exports = function microservice (typeDefs, resolvers, datasources, schema
     }
   };
 
-  let context = is.any([is.plainObject,is.function_],context)
+  let context = is.any([is.plainObject,is.function_],_context)
     ? _context
     : {};
 
