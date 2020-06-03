@@ -53,7 +53,7 @@ module.exports = function microservice (typeDefs, resolvers, datasources, schema
 
   assert(is.plainObject(resolvers) === true, 'resolvers must be a plain object');
   assert(
-    is.any([is.class, is.function, is.plainObject], datasources) === true,
+    is.any([is.class_, is.function_, is.plainObject], datasources) === true,
     'datasources must be either a class instance, a plain object, or a function'
   );
   assert(is.plainObject(schemaDirectives) === true, 'schemaDirectives must be a plain object');
@@ -81,7 +81,7 @@ module.exports = function microservice (typeDefs, resolvers, datasources, schema
     }
   };
 
-  let context = is.any([is.plainObject,is.function],context)
+  let context = is.any([is.plainObject,is.function_],context)
     ? _context
     : {};
 
@@ -92,7 +92,7 @@ module.exports = function microservice (typeDefs, resolvers, datasources, schema
   schema.typeDefs = typeDefs;
 
   if (is.logger(logger) === true) {
-    if (is.function(context) === true) {
+    if (is.function_(context) === true) {
       const original = context;
       context = (integrationContext) => {
         return {
