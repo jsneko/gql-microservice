@@ -1,5 +1,5 @@
 {
-  "name": "graphql-microservice",
+  "name": "gql-microservice",
   "version": "1.0.0",
   "description": "Consolidates the boilerplate for running an Apollo GraphQL server",
   "main": "index.js",
