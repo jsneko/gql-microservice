@@ -1,0 +1,43 @@
+# gpl-microservice
+
+Consolidates the boilerplate for running an Apollo GraphQL federated service.
+
+License: [MIT](/LICENSE.md)
+
+## Synopsis
+
+There is a bit of setup required to create an Apollo GraphQL federated service. This module attempts to abstract that code so that developers can concentrate on writing the schemas, resolvers, and directives without worrying (too much) about the server.
+
+## Install
+
+`yarn add https://github.com/jsneko/gql-microservice.git`
+
+`npm install https://github.com/jsneko/gql-microservice.git`
+
+## Simple Example
+```js
+const microservice = require('gpl-microservice');
+const typeDefs = require(/** location for typdefs file **/);
+const resolvers = require(/** location for resolvers file **/);
+const datasources = require(/** location for datasources file **/);
+const options = {
+    logger: /* Logger instance, if any */,
+    context: /* additional context */
+    config: {
+      /* additional ApolloServer configuration options (i.e: mock)*/
+    }
+};
+
+function main(port) {
+    return microservice(typeDefs, resolvers, datasources, options)
+        .start(port);
+}
+
+main(4000)
+    .catch((error) => {
+        /* handle error */
+    });
+```
+
+## API
+{{>main}}

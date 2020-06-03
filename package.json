@@ -5,9 +5,21 @@
   "main": "index.js",
   "author": "william.weithers@gmail.com (Bill Weithers)",
   "license": "MIT",
+  "scripts": {
+    "doc:markdown": "jsdoc2md --template README.hbs --files index.js isLogger.js > README.md",
+    "doc:add": "git add ."
+  },
   "dependencies": {
     "@apollo/federation": "0.16.2",
     "@sindresorhus/is": "2.1.1",
     "apollo-server": "2.14.1"
-  }
+  },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^6.0.1",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "doc:markdown",
+    "doc:add"
+  ]
 }
