@@ -84,7 +84,7 @@ function microservice (typeDefs, resolvers, datasources, options = {}) {
   let dataSources;
 
   if (is.class_(datasources) === true) {
-    datasSources = new datasources();
+    dataSources = new datasources();
   } else {
     dataSources = datasources;
   }
@@ -95,8 +95,8 @@ function microservice (typeDefs, resolvers, datasources, options = {}) {
   const config = {};
   const schema = {
     resolvers,
-    dataSourcess() {
-      return datasources;
+    dataSources() {
+      return dataSources;
     }
   };
 
