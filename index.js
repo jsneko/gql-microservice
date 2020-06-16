@@ -81,6 +81,14 @@ function microservice (typeDefs, resolvers, datasources, options = {}) {
     ..._config
   } = $config || {};
 
+  let dataSources;
+
+  if (is.class_(datasources) === true) {
+    datasSources = new datasources();
+  } else {
+    dataSources = datasources;
+  }
+
   // clear out _schemaDirectives since we don't need it
   _schemaDirectives = undefined;
 
