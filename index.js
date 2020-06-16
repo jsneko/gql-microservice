@@ -92,12 +92,13 @@ function microservice (typeDefs, resolvers, datasources, options = {}) {
   // clear out _schemaDirectives since we don't need it
   _schemaDirectives = undefined;
 
-  const config = {};
-  const schema = {
-    resolvers,
+  const config = {
     dataSources() {
       return dataSources;
     }
+  };
+  const schema = {
+    resolvers,
   };
 
   let context = is.any([is.plainObject,is.function_],_context)
